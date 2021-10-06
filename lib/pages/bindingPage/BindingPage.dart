@@ -32,7 +32,7 @@ class BindingPage extends GetView<BindingPageController> {
                 },
               ),
               GetBuilder<BindingPageController>(
-                id: "enum", //對應到上一張64行的 update(["enum"]);
+                id: "enum", //對應到BindingPageController64行的 update(["enum"]);
                 init: controller,
                 builder: (_) {
                   return Center(

@@ -4,7 +4,6 @@ class News {
   List<Articles> articles = [];
 
   News();
-  // News({this.status, this.totalResults, this.articles});
 
   News.fromJson(Map<String, dynamic> json) {
     status = json['status'];

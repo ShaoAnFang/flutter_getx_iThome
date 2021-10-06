@@ -50,8 +50,7 @@ class ExtensionPage extends GetView<ExtensionPageController> {
                       Card(
                         child: ListTile(
                             title: Text("Snackbar show"),
-                            onTap: () => Get.snackbar(
-                                "Get.snackbar", "Get.snackbar Message")),
+                            onTap: () => Get.snackbar("Get.snackbar", "Get.snackbar Message")),
                       ),
                       const SizedBox(height: 8),
                       Text("Screen Info"),

@@ -1,6 +1,7 @@
 import 'package:get/get.dart';
 import 'package:it_home/pages/Lottie/LottiePageController.dart';
 import 'package:it_home/pages/NewsPage/NewsPageController.dart';
+import 'package:it_home/pages/NewsPage/NewsPageRepositoryImpl.dart';
 import 'package:it_home/pages/Toast/ToastPageController.dart';
 import 'package:it_home/pages/Wrap/WrapPageController.dart';
 import 'package:it_home/pages/bindingPage/BindingPageController.dart';
@@ -27,6 +28,6 @@ class PagesBind extends Bindings {
     Get.lazyPut<QRCodeScanPageController>(() => QRCodeScanPageController());
     Get.lazyPut<BindingPageController>(() => BindingPageController());
     Get.lazyPut<ExtensionPageController>(() => ExtensionPageController());
-    Get.lazyPut<NewsPageController>(() => NewsPageController());
+    Get.lazyPut<NewsPageController>(() => NewsPageController(repository: NewsPageRepositoryImpl()));
   }
 }

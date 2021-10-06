@@ -2,11 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:it_home/pages/Translations_local/TranslationService.dart';
 import 'package:it_home/routes/app_pages.dart';
+import 'package:it_home/utils/PushNotificationManager.dart';
 import 'package:it_home/utils/UserDefault.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-
+  
+  await PushNotificationManager.init();
   await UserDefault().init();
   runApp(MyApp());
 }
