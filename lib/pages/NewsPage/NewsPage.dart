@@ -11,7 +11,8 @@ class NewsPage extends GetView<NewsPageController> {
       body: SafeArea(
         child: Obx(
           () => AnimatedSwitcher(
-            duration: const Duration(milliseconds: 500),
+            duration: const Duration(milliseconds: 1000),
+            switchInCurve: Curves.easeIn,
             child: (controller.isLoading)
                 // ? Center(child: CircularProgressIndicator())
                 ? ListViewShimmer(key: ValueKey<int>(0))

@@ -14,7 +14,8 @@ class FirstPageController extends GetxController {
     "QRCodePage",
     "BindingPage",
     "ExtensionPage",
-    "NewsPage"
+    "NewsPage",
+    "SocketIOPage"
   ].obs;
   get dataList => this._dataList.toList();
 

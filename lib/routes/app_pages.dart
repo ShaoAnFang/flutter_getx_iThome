@@ -1,6 +1,7 @@
 import 'package:get/get.dart';
 import 'package:it_home/pages/Lottie/LottiePage.dart';
 import 'package:it_home/pages/NewsPage/NewsPage.dart';
+import 'package:it_home/pages/SocketIOPage/SocketIOPage.dart';
 import 'package:it_home/pages/Toast/ToastPage.dart';
 import 'package:it_home/pages/Wrap/WrapPage.dart';
 import 'package:it_home/pages/bindingPage/BindingPage.dart';
@@ -77,7 +78,11 @@ class AppPages {
           page: () => NewsPage(),
           binding: PagesBind(),
         ),
-        
+        GetPage(
+          name: AppRoutes.SocketIOPage,
+          page: () => SocketIOPage(),
+          binding: PagesBind(),
+        ),
       ],
     ),
   ];

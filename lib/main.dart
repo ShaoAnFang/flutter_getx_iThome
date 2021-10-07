@@ -5,11 +5,13 @@ import 'package:it_home/routes/app_pages.dart';
 import 'package:it_home/utils/ConnectivityManager.dart';
 import 'package:it_home/utils/PushNotificationManager.dart';
 import 'package:it_home/utils/UserDefault.dart';
+import 'dart:io';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await ConnectivityManager().init();
   await UserDefault().init();
+  HttpOverrides.global = MyHttpOverrides();
   // await PushNotificationManager.init();
   runApp(MyApp());
 }
@@ -26,5 +28,15 @@ class MyApp extends StatelessWidget {
       translations: TranslationService(),
       locale: Locale('en', 'US'),
     );
+  }
+}
+
+class MyHttpOverrides extends HttpOverrides {
+  @override
+  HttpClient createHttpClient(SecurityContext? context) {
+    print(context);
+    return super.createHttpClient(context)
+      ..badCertificateCallback =
+          (X509Certificate cert, String host, int port) => true;
   }
 }

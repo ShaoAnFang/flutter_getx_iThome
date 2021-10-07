@@ -13,4 +13,5 @@ abstract class AppRoutes {
   static const BindingPage = '/BindingPage';
   static const ExtensionPage = '/ExtensionPage';
   static const NewsPage = '/NewsPage';
+  static const SocketIOPage = '/SocketIOPage';
 }
