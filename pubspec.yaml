@@ -50,6 +50,9 @@ dependencies:
   cupertino_icons: ^1.0.2
 
 dev_dependencies:
+
+  flutter_native_splash: ^1.2.0
+  
   flutter_test:
     sdk: flutter
 
@@ -97,3 +100,13 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
+
+# flutter pub run flutter_native_splash:create
+flutter_native_splash:
+  color: "#FFFFFF"
+  image: assets/LaunchLogo.png
+  android_gravity: center
+  ios_content_mode: center
+  android: true
+  ios: true
+  web: false
