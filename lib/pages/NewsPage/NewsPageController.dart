@@ -11,8 +11,8 @@ class NewsPageController extends GetxController {
   set isLoading(value) => this._isLoading.value = value;
   get isLoading => this._isLoading.value;
 
-  final _dataList = <Articles>[].obs;
-  get dataList => this._dataList.toList();
+  final _dataList = <Loaction>[].obs;
+  List<Loaction> get dataList => this._dataList.toList();
 
   @override
   void onInit() async {
@@ -22,8 +22,8 @@ class NewsPageController extends GetxController {
 
   fetchData() async {
     isLoading = true;
-    final newsResult = await repository.getNews();
-    _dataList.assignAll(newsResult.articles);
+    final result = await repository.getNews();
+    _dataList.assignAll(result.sublist(0, result.length ~/ 3));
     isLoading = false;
   }
 }

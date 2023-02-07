@@ -23,32 +23,36 @@ class ImagePickPageController extends GetxController {
       // print(imageFilePath);
       imageFilePath = await cropImage(pickedFile.path);
       GallerySaver.saveImage(imageFilePath);
-    } 
+    }
   }
 
   Future cropImage(String pickedFilePath) async {
-    File? croppedFile = await ImageCropper.cropImage(
-        sourcePath: pickedFilePath,
-        aspectRatioPresets: Platform.isAndroid
-            ? [
-                CropAspectRatioPreset.square,
-                CropAspectRatioPreset.original,
-                //CropAspectRatioPreset.ratio4x3,
-                //CropAspectRatioPreset.ratio16x9
-              ]
-            : [
-                CropAspectRatioPreset.original,
-                CropAspectRatioPreset.square,
-                //CropAspectRatioPreset.ratio4x3,
-                //CropAspectRatioPreset.ratio16x9
-              ],
-        androidUiSettings: AndroidUiSettings(
-            toolbarTitle: 'Cropper',
-            toolbarColor: Colors.blueAccent,
-            toolbarWidgetColor: Colors.white,
-            initAspectRatio: CropAspectRatioPreset.square,
-            lockAspectRatio: false),
-        iosUiSettings: IOSUiSettings(title: 'Cropper'));
+    CroppedFile? croppedFile = await ImageCropper().cropImage(
+      sourcePath: pickedFilePath,
+      aspectRatioPresets: Platform.isAndroid
+          ? [
+              CropAspectRatioPreset.square,
+              CropAspectRatioPreset.original,
+              //CropAspectRatioPreset.ratio4x3,
+              //CropAspectRatioPreset.ratio16x9
+            ]
+          : [
+              CropAspectRatioPreset.original,
+              CropAspectRatioPreset.square,
+              //CropAspectRatioPreset.ratio4x3,
+              //CropAspectRatioPreset.ratio16x9
+            ],
+      uiSettings: [
+        AndroidUiSettings(
+          toolbarTitle: 'Cropper',
+          toolbarColor: Colors.blueAccent,
+          toolbarWidgetColor: Colors.white,
+          initAspectRatio: CropAspectRatioPreset.square,
+          lockAspectRatio: false,
+        ),
+        IOSUiSettings(title: 'Cropper')
+      ],
+    );
     if (croppedFile != null) {
       return croppedFile.path;
     } else {

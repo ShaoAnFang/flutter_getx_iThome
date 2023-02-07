@@ -21,11 +21,11 @@ class NewsPage extends GetView<NewsPageController> {
                     itemCount: controller.dataList.length,
                     itemBuilder: (_, index) {
                       final title = controller.dataList[index].title;
-                      final content = controller.dataList[index].content;
+                      final description = controller.dataList[index].description;
                       return Card(
                         child: ListTile(
                           title: Text(title),
-                          subtitle: Text(content),
+                          subtitle: Text(description),
                         ),
                       );
                     },

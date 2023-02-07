@@ -2,7 +2,7 @@ import 'dart:async';
 import "package:dio/dio.dart";
 import 'package:it_home/utils/UserDefault.dart';
 
-const BASEURL = "https://newsapi.org/v2";
+const BASEURL = "https://raw.githubusercontent.com";
 
 class HttpUtil {
   static final HttpUtil _instance = HttpUtil._internal();
@@ -13,7 +13,7 @@ class HttpUtil {
   HttpUtil._internal() {
     BaseOptions options = BaseOptions();
     options.baseUrl = BASEURL;
-    options.receiveTimeout = 10000; 
+    options.receiveTimeout = 100000; 
     options.connectTimeout = 8000; 
     options.contentType = 'application/json';
     dio = Dio(options);

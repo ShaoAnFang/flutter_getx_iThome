@@ -2,7 +2,7 @@ import 'package:it_home/entity/news_model.dart';
 import 'package:it_home/network/api_service.dart';
 
 abstract class NewsPageRepository {
-  Future getNews();
+  Future<List<Loaction>> getNews();
 }
 
 class NewsPageRepositoryImpl implements NewsPageRepository {
@@ -11,7 +11,7 @@ class NewsPageRepositoryImpl implements NewsPageRepository {
   final apiService = ApiService();
 
   @override
-  Future<News> getNews() async {
+  Future<List<Loaction>> getNews() async {
     return await apiService.getNews();
   }
 }
