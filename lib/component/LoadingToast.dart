@@ -39,7 +39,7 @@ class LoadingToast {
       );
     });
 
-    Overlay.of(Get.overlayContext!)?.insert(overlayEntry);
+    Overlay.of(Get.overlayContext!).insert(overlayEntry);
     needToRemove = true;
     final millisecond = (seconds * 1000).toInt();
     Future.delayed(Duration(milliseconds: millisecond)).then((value) {

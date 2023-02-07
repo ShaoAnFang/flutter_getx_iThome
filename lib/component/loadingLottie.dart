@@ -15,7 +15,7 @@ class LoadingLottieView extends StatelessWidget {
       child: Transform.scale(
         scale: 1.3,
         child: Lottie.asset(
-          'assets/lottie/loadingrepeatWhite.json',
+          'assets/lottie/star.json',
           fit: BoxFit.fitHeight,
         ),
       ),

@@ -16,7 +16,7 @@ class LottiePage extends GetView<LottiePageController> {
           children: [
             Center(
               child: Container(
-                color: Colors.blue[100],
+                // color: Colors.blue[100],
                 child: LoadingLottieView(),
               ),
             ),
